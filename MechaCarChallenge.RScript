@@ -20,7 +20,7 @@ total_summary <- summarize(coil_table, Mean = mean(PSI), Median = median(PSI), V
 lot_summary <- coil_table %>% group_by(Manufacturing_Lot) %>% summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI))
 
 # Perform t-test for all lots combined vs. a population mean of 15000
-t.test(coil_table$PSI, mu = 15000)
+t.test(coil_table$PSI, mu = 1500)
 
 # Create subsets of our original table to perform t-tests on
 lot1 <- subset(coil_table, Manufacturing_Lot=="Lot1")
