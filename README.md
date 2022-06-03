@@ -59,18 +59,21 @@ So there is sufficient evidence supporting our null hypothesis, so we will fail 
 which makes this claim even more valid. 
 
 **Lot 1 T-Test**
+
 ![screenshot](https://github.com/KW0114/MechaCar_Statistical_Analysis/blob/4751a5905fb8fb79d63e0082a14e6cfe803300f8/Resources/lot1_t_test.png)
 
 When testing lot 1, our p-value is exactly 1. This is the highest possible value we could get. This is because when you look at our summary stats for
 lot 1, the mean is indeed exactly 1500, so we will fail to reject the null hypothesis.
 
 **Lot 2 T-Test**
+
 ![screenshot](https://github.com/KW0114/MechaCar_Statistical_Analysis/blob/d98007127f95a3c263df233c0cf95857ea1ea47b/Resources/lot2_t_test.png)
 
 When testing lot 2, the p-value is 0.6, which is much higher than 0.05. We will again fail to reject the null hypothesis, there is sufficient evidence supporting
 the fact that there is no statistical difference between the mean of lot 2 and the mean of our population.
 
 **Lot 3 T-Test**
+
 ![screenshot](https://github.com/KW0114/MechaCar_Statistical_Analysis/blob/d98007127f95a3c263df233c0cf95857ea1ea47b/Resources/lot3_t_test.png)
 
 When testing lot 3, the p-value is 0.04, which is below our threshold of significance. For this lot, we will reject the null hypothesis and favor the alternative,
