@@ -1,0 +1,33 @@
+# Dependency
+library(dplyr)
+
+# Read mpg csv into a table
+mpg_table <- read.csv("MechaCar_mpg.csv")
+
+# Perform multiple linear regression with mpg
+regression <- lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data = mpg_table)
+
+# Use summary function to determine p-value and r-squared values
+summary(regression)
+
+# Read suspension coil csv into a table
+coil_table <- read.csv("Suspension_Coil.csv")
+
+# Create summary dataframe for this table
+total_summary <- summarize(coil_table, Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI))
+
+# Create summary dataframe categorized by by lot
+lot_summary <- coil_table %>% group_by(Manufacturing_Lot) %>% summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI))
+
+# Perform t-test for all lots combined vs. a population mean of 15000
+t.test(coil_table$PSI, mu = 15000)
+
+# Create subsets of our original table to perform t-tests on
+lot1 <- subset(coil_table, Manufacturing_Lot=="Lot1")
+lot2 <- subset(coil_table, Manufacturing_Lot=="Lot2")
+lot3 <- subset(coil_table, Manufacturing_Lot=="Lot3")
+
+# Perform a t-test for each lot individually vs. the population mean of 15000
+t.test(lot1$PSI,mu=1500)
+t.test(lot2$PSI,mu=1500)
+t.test(lot3$PSI,mu=1500)
